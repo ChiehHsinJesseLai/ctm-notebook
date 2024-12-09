@@ -1,0 +1,9 @@
+diffusers>=0.13.0
+accelerate>=0.16.0
+numpy 
+lmdb
+opencv
+pycurl
+plotly
+matplotlib
+blobfile
