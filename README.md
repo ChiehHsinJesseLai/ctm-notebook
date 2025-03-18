@@ -3,7 +3,8 @@ This is the training repository of ctm using lsun bedroom dataset
  
  
 ## Prerequisites 
-1.Install docker. 
+1.Install docker
+
 2.create and launch container. The build.sh and launch.sh scripts are given in docker folder
  
 ## Dataset
