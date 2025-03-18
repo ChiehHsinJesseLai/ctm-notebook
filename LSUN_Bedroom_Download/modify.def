@@ -1,0 +1,7 @@
+Bootstrap: localimage
+From: /home/ritesh.mahajan/ctm_lsun/ctm_lsun_bedroom/LSUN_Bedroom_Download/docker/lsun_dataset.sif
+
+%post 
+    pip install --no-cache-dir lmdb
+
+ 
