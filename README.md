@@ -4,7 +4,9 @@ This repository contains the codebase for Consistency Trajectory Model(CTM) impl
  
 ## Prerequisites 
 1.Install docker. 
+
 2.create and launch container. The build.sh and launch.sh scripts are given in docker folder
+
 3.Use "edm_bedroom256_ema.pt" as teacher model and "VIRTUAL_lsun_bedroom256.npz" as ref_path
  
 ## Dataset
