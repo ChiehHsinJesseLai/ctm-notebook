@@ -3,11 +3,11 @@ This repository contains the codebase for Consistency Trajectory Model(CTM) impl
  
  
 ## Prerequisites 
-1.Install docker. 
+1.Install docker
 
-2.create and launch container. The build.sh and launch.sh scripts are given in docker folder
+2.Use the build.sh and launch.sh scripts provided in the docker folder to create and launch the Docker container
 
-3.Use "edm_bedroom256_ema.pt" as teacher model and "VIRTUAL_lsun_bedroom256.npz" as ref_path
+3.Use "edm_bedroom256_ema.pt" as the teacher model and "VIRTUAL_lsun_bedroom256.npz" as the reference path for your tasks.
  
 ## Dataset
 1.Download the LSUN Bedroom Dataset: Clone the fyu/lsun repository on GitHub and run their download script
