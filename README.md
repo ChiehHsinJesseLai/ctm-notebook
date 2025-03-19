@@ -1,5 +1,5 @@
 ## CTM Training and Evaluation
-This repository contains the codebase for Consistency Trajectory Model(CTM) implemented using PyTorch for conducting experiments on LSUN Bedroom images
+This repository contains the codebase for Consistency Trajectory Model(CTM) implemented using PyTorch for conducting experiments on LSUN Bedroom images. The latest code is available in branch "ctm_lsun_bedroom_refactor".
  
  
 ## Prerequisites 
