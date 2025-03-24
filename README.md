@@ -29,7 +29,7 @@ FID(Frechet Inception Distance), Recall and Precision
 3.Download "edm_bedroom256_ema.pt" as the teacher model and "VIRTUAL_lsun_bedroom256.npz" as the reference path for your tasks. (Need update the links)
 
 ## Inference
-Download our checkpoint [here](link to released checkpoiny)
+Download our checkpoint [here](link to released checkpoint)
 
 [Add inference commands]
 
