@@ -1,5 +1,5 @@
 # CTM: Consistency Trajectory Model
-This repository contains the codebase for [Consistency Trajectory Model(CTM)](https://arxiv.org/pdf/2310.02279) implemented using PyTorch for conducting experiments on LSUN Bedroom images. 
+This repository contains the codebase for [Consistency Trajectory Model (CTM)](https://arxiv.org/pdf/2310.02279) implemented using PyTorch for conducting experiments on LSUN Bedroom images. 
 
 ## Introduction
 CTM is an advanced framework to enhance the efficiency and quality of diffusion model sampling. It generalizes consistency models and score-based models, enabling a single neural network to output scores and traverse between any initial and final time along the Probability Flow Ordinary Differential Equation (ODE) in a diffusion process.
@@ -35,11 +35,11 @@ Download our checkpoint [here](link to released checkpoint)
 
 
 ## Dataset preparation
-1.Download the LSUN Bedroom Dataset: Clone the fyu/lsun repository on GitHub and run their download script
+1. Download the LSUN Bedroom Dataset: Clone the fyu/lsun repository on GitHub and run their download script
 
-2.Use the LSUN_Bedroom_Download/read_write_lsun.py script to convert images stored in the LMDB database into PNG files and save them to specified directories.
+2. Use the LSUN_Bedroom_Download/read_write_lsun.py script to convert images stored in the LMDB database into PNG files and save them to specified directories.
 
-3.Ensure you have the required libraries installed (PIL, lmdb, numpy).
+3. Ensure you have the required libraries installed (PIL, lmdb, numpy).
  
 ## Training
 Git clone the CTM github repo. Add correct folder paths and parameters in the below command scripts,then perform the training as given below.
