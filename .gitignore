@@ -1,0 +1,10 @@
+# .gitignore
+
+.pytest_cache
+.cache
+.pytest_cache
+*.egg-info
+*.pyc
+
+#vscode
+.vscode/
