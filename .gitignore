@@ -1,10 +1,6 @@
 # .gitignore
 
-.pytest_cache
-.cache
-.pytest_cache
-*.egg-info
-*.pyc
+ctm-cifar10/cm/__pycache__/
 
 #vscode
 .vscode/
