@@ -1,5 +1,0 @@
-#!/bin/bash
-export WORLD_SIZE=$OMPI_COMM_WORLD_SIZE
-export RANK=$OMPI_COMM_WORLD_RANK
-export LOCAL_RANK=$OMPI_COMM_WORLD_LOCAL_RANK
-exec python "$@"

@@ -14,8 +14,8 @@
 # module load hpcx/2.12
 
 
-MODEL_FLAGS="--batch_size=528 --microbatch=8 --gan_different_augment=True --start_ema=0.9999 --save_interval=1000 --eval_interval=1000 --eval_fid=False --eval_similarity=True --check_dm_performance=True --compute_ema_fids=True --gan_fake_inner_type=model --gan_fake_outer_type=target_model_sg --gan_training=True --g_learning_period=2 --self_learn=True --ref_path=/workspace/ctm/ctm-cifar10_cond/weight/cifar10-32x32.npz --data_dir=/workspace/ctm/cifar10_images"
-CKPT_FLAGS="--out_dir /workspace/ctm/ctm-cifar10/GAN/uncond/GAN_bs_528_ema_0.9999_diff_aug/ --resume_checkpoint=/workspace/ctm/ctm-cifar10/unconditional/model095000.pt"
+MODEL_FLAGS="--batch_size=4 --microbatch=2 --gan_different_augment=True --start_ema=0.9999 --save_interval=10 --eval_interval=10 --eval_fid=False --eval_similarity=True --check_dm_performance=True --compute_ema_fids=True --gan_fake_inner_type=model --gan_fake_outer_type=target_model_sg --gan_training=True --g_learning_period=2 --self_learn=True --ref_path=/workspace/ctm/ctm-cifar10_cond/weight/cifar10-32x32.npz --data_dir=/workspace/ctm/cifar10_images_toy --gpu_usage=True"
+CKPT_FLAGS="--out_dir /workspace/ctm/test/ctm-cifar10/GAN/uncond/GAN_bs_528_ema_0.9999_diff_aug/ --resume_checkpoint=/workspace/ctm/test/ctm-cifar10/unconditional/model095000.pt"
 
-torchrun /workspace/ctm/ctm-cifar10/cm_train.py $MODEL_FLAGS $CKPT_FLAGS
+torchrun /workspace/ctm/test/ctm-cifar10/cm_train.py $MODEL_FLAGS $CKPT_FLAGS
 
