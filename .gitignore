@@ -1,6 +1,0 @@
-# .gitignore
-
-ctm-cifar10/cm/__pycache__/
-
-#vscode
-.vscode/

@@ -1088,7 +1088,6 @@ def create_ema_and_scales_fn(
 ):
     def ema_and_scales_fn(step):
         if target_ema_mode == "fixed" and scale_mode == "fixed":
-            print('Printing from the if block of ema and scales fn')
             target_ema = start_ema
             scales = start_scales
         else:
@@ -1370,7 +1369,6 @@ def calc_dims(pretrained, is_vit=False):
 def _make_vit(model, name):
     # print(name)
     if 'base' in name:
-        print(" i am inside the loop")
         features = [96, 192, 384, 768]
         hooks = [2, 5, 8, 11]
         vit_features = 768
