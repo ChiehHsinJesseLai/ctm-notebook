@@ -97,8 +97,8 @@ After training completes, configure sampling hyperparameters similarly if requir
 ├── model095000.pt             # Pre-trained model checkpoint
 ├── cifar10-32x32.npz          # Reference dataset
 ├── cifar10_images/            # Training data directory
-├── notebooks/                  # Jupyter notebooks
-└── output/                     # Generated samples and checkpoints
+├── notebooks/                 # Jupyter notebooks
+└── output/                    # Generated samples and checkpoints
     └── GAN/
         └── uncond/
             └── GAN_bs_528_ema_0.9999_diff_aug/
@@ -113,14 +113,6 @@ After training completes, configure sampling hyperparameters similarly if requir
 5. **Monitoring**: Check FID scores and similarity metrics during training
 6. **Sampling**: Configure sampling parameters and generate images
 7. **Evaluation**: Analyze generated samples and metrics
-
-## Evaluation Metrics
-
-The implementation tracks:
-* **FID (Fréchet Inception Distance)**: Image quality metric
-* **Similarity Scores**: Between generated and real images
-* **EMA FID Scores**: Using exponential moving average models
-* **Diffusion Model Performance**: Optional performance checks
 
 
 ## Troubleshooting
