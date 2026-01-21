@@ -37,6 +37,8 @@ docker exec -it ctm-container bash
 
 ### 3. Prepare Files Inside Container
 
+The model checkpoint file and cifar10-32x32.npz file can be downloaded from the following link - [model](https://drive.google.com/drive/folders/1mi_HN7a7k6aEm8wl0ooMlRwccY-31-d_) & [cifar](https://drive.google.com/drive/folders/1ei4PLmTrAlj-j_yUfLqXSpI5OOIqDlgv)
+
 Once inside the container:
 
 ```bash
@@ -46,8 +48,6 @@ mv model095000.pt /mount-location/
 # Move CIFAR-10 reference dataset to appropriate location
 mv cifar10-32x32.npz /mount-location/
 ```
-
-The model checkpoint file and cifar10-32x32.npz file can be downloaded from the following link - [model](https://drive.google.com/drive/folders/1mi_HN7a7k6aEm8wl0ooMlRwccY-31-d_) & [cifar](https://drive.google.com/drive/folders/1ei4PLmTrAlj-j_yUfLqXSpI5OOIqDlgv)
 
 ### 4. Launch Jupyter Notebook
 
