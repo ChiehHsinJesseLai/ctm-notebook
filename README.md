@@ -1,6 +1,6 @@
 # Consistency Trajectory Models (CTM) - Training & Sampling Guide
  
-A comprehensive Jupyter notebook implementation for learning and experimenting with Consistency Trajectory Models using the CIFAR-10 dataset.
+A simple Jupyter notebook implementation for learning and experimenting with Consistency Trajectory Models using the CIFAR-10 dataset.
  
 ## Overview
  
@@ -122,3 +122,9 @@ After training completes, configure sampling hyperparameters similarly if requir
 * **GPU Issues**: Check CUDA installation and GPU availability
 
 ---
+
+## Contributors
+* [Harshavardhan R](https://www.linkedin.com/in/harsha-tesla/) 
+* [Srinidhi Srinivasa](https://www.linkedin.com/in/gonchkarsrinidhi/)
+* [Basavaraj Murali](https://www.linkedin.com/in/basavaraj-murali-022819121/)
+* [Ritesh Mahajan](https://www.linkedin.com/in/ritesh-mahajan-2b318250/)
