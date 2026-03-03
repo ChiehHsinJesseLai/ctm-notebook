@@ -6,6 +6,14 @@ A simple Jupyter notebook implementation for learning and experimenting with Con
  
 This project provides a Docker-containerized Jupyter notebook for implementing Consistency Trajectory Models (CTM), specifically designed for training from scratch and sample generation.
 
+## Contributors
+* [Harshavardhan R](https://www.linkedin.com/in/harsha-tesla/) 
+* [Srinidhi Srinivasa](https://www.linkedin.com/in/gonchkarsrinidhi/)
+* [Basavaraj Murali](https://www.linkedin.com/in/basavaraj-murali-022819121/)
+* [Ritesh Mahajan](https://www.linkedin.com/in/ritesh-mahajan-2b318250/)
+
+---
+
 ## Prerequisites
 
 * Docker installed on your system
@@ -121,10 +129,3 @@ After training completes, configure sampling hyperparameters similarly if requir
 * **Path Errors**: Verify all file paths match your directory structure
 * **GPU Issues**: Check CUDA installation and GPU availability
 
----
-
-## Contributors
-* [Harshavardhan R](https://www.linkedin.com/in/harsha-tesla/) 
-* [Srinidhi Srinivasa](https://www.linkedin.com/in/gonchkarsrinidhi/)
-* [Basavaraj Murali](https://www.linkedin.com/in/basavaraj-murali-022819121/)
-* [Ritesh Mahajan](https://www.linkedin.com/in/ritesh-mahajan-2b318250/)
