@@ -34,11 +34,11 @@ from .fp16_util import (
     make_master_params,
     master_params_to_model_params,
 )
+
+INITIAL_LOG_LOSS_SCALE = 20.0
 # For ImageNet experiments, this was a good default value.
 # We found that the lg_loss_scale quickly climbed to
 # 20-21 within the first ~1K steps of training.
-INITIAL_LOG_LOSS_SCALE = 20.0
-
 
 class TrainLoop:
     """
@@ -362,7 +362,6 @@ class TrainLoop:
             batch_size = self.args.sampling_batch
         number = 0
         while num_samples > number:
-            print(f"{number} number samples complete")
             with th.no_grad():
                 model_kwargs = {}
                 if self.args.class_cond:
@@ -491,7 +490,6 @@ class TrainLoop:
         for i, file in enumerate(files):
             images = np.load(file)['arr_0']
             for k in range((images.shape[0] - 1) // batch_size + 1):
-                #ref_img = self.ref_images[count + k * batch_size: count + (k + 1) * batch_size]
                 if count + batch_size > num_samples:
                     remaining_num_samples = num_samples - count
                 else:
@@ -502,13 +500,11 @@ class TrainLoop:
                 ssim += SSIM_(img,ref_img,multichannel=True,
                               channel_axis=3,data_range=255) * remaining_num_samples
                 count = count + remaining_num_samples
-                print(count)
                 if count >= num_samples:
                     break
             if count >= num_samples:
                 break
         assert count == num_samples
-        print(count)
         psnr /= num_samples
         ssim /= num_samples
         assert num_samples % 1000 == 0
@@ -547,13 +543,11 @@ class TrainLoop:
                     mu += features[:remaining_num_samples].sum(0)
                     sigma += features[:remaining_num_samples].T @ features[:remaining_num_samples]
                     count = count + remaining_num_samples
-                    print(count)
                     if count >= num_samples:
                         break
                 if count >= num_samples:
                     break
             assert count == num_samples
-            print(count)
             mu /= num_samples
             sigma -= mu.ger(mu) * num_samples
             sigma /= num_samples - 1
@@ -633,7 +627,6 @@ class TrainLoop:
             if count >= num_samples:
                 break
         assert count == num_samples
-        print(count)
         mu /= num_samples
         sigma -= mu.ger(mu) * num_samples
         sigma /= num_samples - 1

@@ -252,11 +252,8 @@ def sample_multistep(
 
     for i in indices[:-1]:
         sigma = sigmas[i]
-        print(i, sigma, sigmas[i+1])
-        #print(0.002 * s_in)
         denoised = denoiser(x, sigma * s_in, s=0.002 * s_in)
         if i < len(indices) - 2:
-            print(th.sqrt(sigmas[i+1] ** 2 - 0.002 ** 2).item())
             x = denoised + th.sqrt(sigmas[i+1] ** 2 - 0.002 ** 2) * th.randn_like(denoised)
         else:
             x = denoised
@@ -308,10 +305,8 @@ def sample_multistep(
 
     for i in indices[:-1]:
         sigma = sigmas[i]
-        print(i, sigma, sigmas[i+1])
         denoised = denoiser(x, sigma * s_in, s=0.002 * s_in)
         if i < len(indices) - 2:
-            print(th.sqrt(sigmas[i+1] ** 2 - 0.002 ** 2).item())
             x = denoised + th.sqrt(sigmas[i+1] ** 2 - 0.002 ** 2) * th.randn_like(denoised)
         else:
             x = denoised
@@ -363,7 +358,6 @@ def sample_exact(
 
     for i in indices[:-1]:
         sigma = sigmas[i]
-        print(sigma, sigmas[i+1])
         if sigmas[i+1] != 0:
             denoised = denoiser(x, sigma * s_in, s=sigmas[i + 1] * s_in)
             x = denoised
@@ -420,7 +414,6 @@ def sample_gamma_multistep_(
     assert gamma != 0.0 and gamma != 1.0
     for i in indices[:-1]:
         sigma = sigmas[i]
-        print(sigma, sigmas[i+1], gamma)
         s = (np.sqrt(1. - gamma ** 2) * (
             sigmas[i + 1] - 0.002) + 0.002)
         denoised = denoiser(x, sigma * s_in,
@@ -512,7 +505,6 @@ def sample_gamma_multistep(
                 sigma = gamma * (sigmas[i-1] - sigmas[i]) + sigmas[i]
         else:
             s = np.sqrt(1. - gamma ** 2) * (sigmas[i + 1] - 0.002) + 0.002
-        print(sigmas[i], sigmas[i + 1], sigma, s, gamma)
         denoised = denoiser(x, sigma * s_in, s=s * s_in)
         if classifier != None and i < len(indices) - 2:
             denoised = denoised + cg_scale * (s * s_in)[:,None,None,None] * get_classifier_guidance(
@@ -1049,7 +1041,6 @@ def iterative_inpainting(
         else:
             s = (np.sqrt(1. - gamma ** 2) * (next_t - 0.002) + 0.002)
             x0 = distiller(x, t * s_in, s=s * s_in)
-            print(t, next_t, s)
 
         if gamma == 1.0:
             x0 = replacement(masked_images, x0, flip=flip)
@@ -1239,8 +1230,6 @@ def iterative_stroke_painting(
     next_t = (t_max_rho + ts[1] / (steps - 1) * (t_min_rho - t_max_rho)) ** rho
     next_t = np.clip(next_t, t_min, t_max)
 
-    print("t: ", t)
-    print("next_t: ", next_t)
     vpsde_ = vpsde(cos_t_classifier=(64 == x.shape[-2]))
     if gamma == 1.0:
         try:
@@ -1251,7 +1240,6 @@ def iterative_stroke_painting(
 
     else:
         s = (np.sqrt(1. - gamma ** 2) * (next_t - 0.002) + 0.002)
-        print("s: ", s)
         x = distiller(x, t * s_in, s=s * s_in)[1]
         if classifier != None:
 

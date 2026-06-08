@@ -85,7 +85,6 @@ def main():
     else:
         ts = None
 
-    print("ind_1, ind_2: ", args.ind_1, args.ind_2)
     if args.stochastic_seed:
         args.eval_seed = np.random.randint(1000000)
     generator = get_generator(args.generator, args.eval_num_samples, args.eval_seed)
@@ -202,7 +201,6 @@ def main():
                     np.savez(os.path.join(out_dir,
                             f"sample_{r}.npz"), sample.numpy())
             if args.save_format == 'png' or itr == 0:
-                print("x range: ", x.min(), x.max())
                 nrow = int(np.sqrt(sample.shape[0]))
                 image_grid = make_grid((x + 1.) / 2., nrow, padding=2)
                 if args.class_cond:

@@ -256,7 +256,7 @@ class Evaluator:
         for k in tqdm(range((batches.shape[0] - 1) // self.batch_size + 1)):
             batch = batches[k * self.batch_size:min((k+1) * self.batch_size, 50000)]
             batch = batch.astype(np.float32)
-            print(batch.shape)
+            # print(batch.shape)
             if batch.shape[0] == 0:
                 break
             pred, spatial_pred = self.sess.run(

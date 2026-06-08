@@ -45,7 +45,10 @@ def main():
     evaluator = Evaluator(tf.Session(config=config), batch_size=250)
 
     print("warming up TensorFlow...")
+
     filenames = glob.glob(os.path.join(args.sample_batch, '*.npz'))
+    print(f"Found {len(filenames)} npz files in: {args.sample_batch}")
+
     imgs = []
     for file in filenames:
         try:
@@ -55,8 +58,12 @@ def main():
             except:
                 img = img['arr_0']
             imgs.append(img)
-        except:
-            pass
+        except Exception as e:
+            print(f"Failed to load {file}: {e}")
+
+    if len(imgs) == 0:
+        raise RuntimeError(f"No images loaded from {args.sample_batch}. Check path and npz keys.")
+
     imgs = np.concatenate(imgs, axis=0)
     os.makedirs(os.path.join(args.sample_batch, 'single_npz'), exist_ok=True)
     np.savez(os.path.join(os.path.join(args.sample_batch, 'single_npz'), f'data'),
